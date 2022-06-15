@@ -33,5 +33,12 @@ namespace CalculadoraTabajara
             return Num1 + " " + Operador + " " + Num2 + " = " + Resultado;
             ;
         }
+
+        public void Subtracao()
+        {
+            Resultado = Num1 - Num2;
+            Operador = "-";
+
+        }
     }
 }

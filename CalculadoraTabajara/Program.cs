@@ -83,13 +83,13 @@ namespace CalculadoraTabajara
                     break;
 
                 case "2":
-
+                    c.Subtracao();
                     break;
 
                 case "3":
 
                     c.Multiplicacao();
-                    calculadora.AdicionarCalculoNoHistorico(c);
+                   
                     
                     break;
 
@@ -97,7 +97,7 @@ namespace CalculadoraTabajara
 
                     break;
             }
-
+            calculadora.AdicionarCalculoNoHistorico(c);
             return c;
         }
     }
