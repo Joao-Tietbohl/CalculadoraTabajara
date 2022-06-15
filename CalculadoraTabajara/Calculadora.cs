@@ -10,6 +10,11 @@ namespace CalculadoraTabajara
     {
         List<Calculo> historico;
 
+        public Calculadora()
+        {
+            historico = new List<Calculo>();    
+        }
+
         public void AdicionarCalculoNoHistorico(Calculo c)
         {
             historico.Add(c);
