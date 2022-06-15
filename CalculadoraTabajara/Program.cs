@@ -5,6 +5,7 @@ namespace CalculadoraTabajara
     internal class Program
     {
 
+
         static Calculadora calculadora = new Calculadora();
 
         static void Main(string[] args)
@@ -29,13 +30,24 @@ namespace CalculadoraTabajara
 
                 Console.WriteLine("Digite S para sair\n");
 
+
+
                 Console.Write("Opção: ");
                 opcao = Console.ReadLine();
 
+
+                if(opcao == "1" || opcao == "2" || opcao == "3" || opcao == "4" || opcao == "s")
+                {
+                    Console.Write("Opção: ");
+                    opcao = Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("Opção Invalida");
+                }
+
                 if (opcao.Equals("s", StringComparison.OrdinalIgnoreCase))
                     break;
-
-
 
                 Calculo c = Calculo(opcao);
               
@@ -52,7 +64,7 @@ namespace CalculadoraTabajara
 
             Console.WriteLine("Tela de Resultados\n");
 
-            Console.Write(c);
+            Console.Write($"O resultado da operação de {c.Operador} é: {c.Resultado}");
 
             Console.WriteLine();
 
@@ -63,28 +75,13 @@ namespace CalculadoraTabajara
 
         private static Calculo Calculo(string opcao)
         {
-
-            decimal primeiroNumero, segundoNumero;
+      
 
             Console.Write($"Digite o primeiro número: ");
-            primeiroNumero = Convert.ToDecimal(Console.ReadLine());
+            double primeiroNumero = Convert.ToDouble(Console.ReadLine());
 
-            do
-            {
-                Console.Write($"Digite o segundo número: ");
-                segundoNumero = Convert.ToDecimal(Console.ReadLine());
-
-                if (opcao.Equals("4") && segundoNumero == 0)
-                {
-                    Console.WriteLine("Número inválido, divisão por zero");
-                    continue;
-                }
-
-                else
-                {
-                    break;
-                }
-            } while (true);
+            Console.Write($"Digite o segundo número: ");
+            double segundoNumero = Convert.ToDouble(Console.ReadLine());
 
             Calculo c = new Calculo(primeiroNumero, segundoNumero);
             
@@ -96,6 +93,8 @@ namespace CalculadoraTabajara
                 case "1":
 
                     c.Adicao();
+                    calculadora.AdicionarCalculoNoHistorico(c);
+
                     break;
 
                 case "2":
@@ -104,12 +103,13 @@ namespace CalculadoraTabajara
 
                 case "3":
 
-                    c.Multiplicacao();                  
+                    c.Multiplicacao();
+                   
+                    
                     break;
 
                 case "4":
 
-                    c.Divisao();
                     break;
             }
             calculadora.AdicionarCalculoNoHistorico(c);
