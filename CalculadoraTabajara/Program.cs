@@ -52,7 +52,7 @@ namespace CalculadoraTabajara
 
             Console.WriteLine("Tela de Resultados\n");
 
-            Console.Write($"O resultado da operação de {c.Operador} é: {c.Resultado}");
+            Console.Write(c);
 
             Console.WriteLine();
 
@@ -96,8 +96,6 @@ namespace CalculadoraTabajara
                 case "1":
 
                     c.Adicao();
-                    calculadora.AdicionarCalculoNoHistorico(c);
-
                     break;
 
                 case "2":
@@ -106,15 +104,12 @@ namespace CalculadoraTabajara
 
                 case "3":
 
-                    c.Multiplicacao();
-                   
-                    
+                    c.Multiplicacao();                  
                     break;
 
                 case "4":
 
                     c.Divisao();
-
                     break;
             }
             calculadora.AdicionarCalculoNoHistorico(c);
