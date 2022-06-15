@@ -40,5 +40,11 @@ namespace CalculadoraTabajara
             Operador = "-";
 
         }
+
+        public void Adicao()
+        {
+            Resultado = Num1 + Num2;
+            Operador = "+";
+        }
     }
 }

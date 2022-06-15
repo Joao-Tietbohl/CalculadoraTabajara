@@ -79,7 +79,10 @@ namespace CalculadoraTabajara
                 default:
 
                 case "1":
-                    
+
+                    c.Adicao();
+                    calculadora.AdicionarCalculoNoHistorico(c);
+
                     break;
 
                 case "2":
