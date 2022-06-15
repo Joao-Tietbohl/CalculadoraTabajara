@@ -33,5 +33,11 @@ namespace CalculadoraTabajara
             return Num1 + " " + Operador + " " + Num2 + " = " + Resultado;
             ;
         }
+
+        public void Adicao()
+        {
+            Resultado = Num1 + Num2;
+            Operador = "+";
+        }
     }
 }
