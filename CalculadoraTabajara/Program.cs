@@ -63,13 +63,28 @@ namespace CalculadoraTabajara
 
         private static Calculo Calculo(string opcao)
         {
-      
+
+            decimal primeiroNumero, segundoNumero;
 
             Console.Write($"Digite o primeiro número: ");
-            double primeiroNumero = Convert.ToDouble(Console.ReadLine());
+            primeiroNumero = Convert.ToDecimal(Console.ReadLine());
 
-            Console.Write($"Digite o segundo número: ");
-            double segundoNumero = Convert.ToDouble(Console.ReadLine());
+            do
+            {
+                Console.Write($"Digite o segundo número: ");
+                segundoNumero = Convert.ToDecimal(Console.ReadLine());
+
+                if (opcao.Equals("4") && segundoNumero == 0)
+                {
+                    Console.WriteLine("Número inválido, divisão por zero");
+                    continue;
+                }
+
+                else
+                {
+                    break;
+                }
+            } while (true);
 
             Calculo c = new Calculo(primeiroNumero, segundoNumero);
             
@@ -97,6 +112,8 @@ namespace CalculadoraTabajara
                     break;
 
                 case "4":
+
+                    c.Divisao();
 
                     break;
             }

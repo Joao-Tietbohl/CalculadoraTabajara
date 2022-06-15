@@ -9,13 +9,13 @@ namespace CalculadoraTabajara
     public class Calculo
     {
 
-        public double Num1 { get; set; }
-        public double Num2 { get; set; }
-        public double Resultado { get; set; } 
+        public decimal Num1 { get; set; }
+        public decimal Num2 { get; set; }
+        public decimal Resultado { get; set; } 
         public string Operador { get; set; }
 
 
-        public Calculo(double num1, double num2)
+        public Calculo(decimal num1, decimal num2)
         {
             Num1 = num1;
             Num2 = num2;
@@ -45,6 +45,12 @@ namespace CalculadoraTabajara
         {
             Resultado = Num1 + Num2;
             Operador = "+";
+        }
+
+        public void Divisao()
+        {
+            Resultado = Num1 / Num2;
+            Operador = "/";
         }
     }
 }
